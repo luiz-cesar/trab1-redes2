@@ -14,6 +14,10 @@ pipenv shell && pipenv install
 
 \* Se não houver a possibilidade de instalação do pipenv, instalar os pacotes pip presentes no arquivo `Pipfile`
 
+### Configuração do ambiente
+
+Para configurar a porta e o endereço IP usados pelo servidor é preciso alterar o arquivo `.env` já inicialmente configurado. Caso cliente e servidor separados, os mesmos valores presentes no `.env` deve ser utilizado em ambos.
+
 ### Execução
 
 ###### Servidor:
