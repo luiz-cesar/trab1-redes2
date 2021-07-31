@@ -16,7 +16,7 @@ pipenv shell && pipenv install
 
 ### Configuração do ambiente
 
-Para configurar a porta e o endereço IP usados pelo servidor é preciso alterar o arquivo `.env` já inicialmente configurado. Caso cliente e servidor separados, os mesmos valores presentes no `.env` deve ser utilizado em ambos.
+Para configurar a porta e o endereço IP usados pelo servidor é preciso alterar o arquivo `.env`, já inicialmente configurado. Caso cliente e servidor estejam em máquinas separadas, os mesmos valores presentes no `.env` devem ser utilizados em ambos.
 
 ### Execução
 
