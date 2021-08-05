@@ -8,6 +8,7 @@ verify_ssl = true
 [packages]
 pycrypto = "*"
 python-dotenv = "*"
+pyjokes = "*"
 
 [requires]
 python_version = "3.6"
