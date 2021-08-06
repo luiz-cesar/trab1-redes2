@@ -20,10 +20,14 @@ PORT = int(os.getenv("PORT"))  # Port to listen on (non-privileged ports are > 1
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.bind((HOST, PORT))
     s.listen()
+    # i representa o número de clientes atendidos
+    i = 0
     while True:
       log("Aguardando conexoes")
       conn, addr = s.accept()
       with conn:
+          i += 1
+          print("Cliente:", i, "\n")
           log("Conectado por", addr)
           # Geracao das chaves
           prime_base = getPrime(32)
@@ -67,4 +71,5 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
               log("Dados do cliente recebidos:", data)
               log("Descriptogradando mensagem")
               msg = cipher.decrypt(data).decode('utf-8')
-              log('Mensagem descriptografada:', msg)     
+              log('Mensagem descriptografada:', msg)
+              print()      

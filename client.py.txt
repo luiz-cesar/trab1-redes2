@@ -2,6 +2,7 @@
 
 import socket
 import os
+from sys import argv
 from struct import pack, unpack
 
 from Crypto.Util.number import getRandomNBitInteger
@@ -46,8 +47,14 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     log("Chave publica do servidor recebida:", server_key)
     # Criacao da chave compartilhada
     log("Gerando chave compartilhada")
-    shared_key = (server_key ** my_key) % prime_base
-    log("Chave compartilhada gerada:", shared_key)
+    if 'falsa' in argv:
+        # Cria uma chave compartilhada falsa
+        shared_key = getRandomNBitInteger(32)
+        log("Chave compartilhada falsa gerada:", shared_key)
+    else:
+        shared_key = (server_key ** my_key) % prime_base
+        log("Chave compartilhada gerada:", shared_key)
+        
     # Transformando chave compartilhada em bytes    
     shared_key = shared_key.to_bytes(8, 'little')
     # Criação objeto de criptografia DES 
