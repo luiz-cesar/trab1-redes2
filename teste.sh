@@ -5,7 +5,7 @@
 FILE="saida_cliente.txt"
 
 : > "$FILE"
-for i in {1..5}
+for i in {1..10}
 do
     echo -e "Iteração $i\n" >> "$FILE"
     ./client.py.txt >> "$FILE"
@@ -13,6 +13,6 @@ do
 done 
 
 echo -e "-------------------------------TESTE SIMULANDO CHAVE ERRADA-------------------------------\n" >> "$FILE"
-echo -e "Iteração 6\n" >> "$FILE"
+echo -e "Iteração 11\n" >> "$FILE"
 ./client.py.txt falsa >> "$FILE"
 echo -e "--------------------------------------------------------------------------------------------------\n" >> "$FILE"
