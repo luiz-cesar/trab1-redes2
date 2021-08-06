@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+# Autores:
+# JEAN GUILHERME CARRARO DA SILVA
+# LUIZ CESAR CLABOND ALMEIDA
+
 import socket
 import os
 from struct import pack, unpack
